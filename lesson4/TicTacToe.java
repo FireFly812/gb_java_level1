@@ -11,8 +11,8 @@ public class TicTacToe {
     final char CHAR_X = 'x';
     final char CHAR_O = 'o';
     final char CHAR_DOT = '.';
-    final String VICTORY_MESSADGE = "YOU WON";
-    final String DROW_MESSADGE = "Sorry...DRAW";
+    final String VICTORY_MESSAGE = "YOU WON";
+    final String DROW_MESSAGE = "Sorry...DRAW";
     Random random;
     Scanner scanner;
     char[][] table;
@@ -33,20 +33,20 @@ public class TicTacToe {
         while (true) {
             turnHuman();
             if (checkWin(CHAR_X)) {
-                System.out.println(VICTORY_MESSADGE);
+                System.out.println(VICTORY_MESSAGE);
                 break;
             }
             if (isTableFull()) {
-                System.out.println(DROW_MESSADGE);
+                System.out.println(DROW_MESSAGE);
             }
             turnAl();
             printTable();
             if (checkWin(CHAR_O)) {
-                System.out.println(VICTORY_MESSADGE);
+                System.out.println(VICTORY_MESSAGE);
                 break;
             }
             if (isTableFull()) {
-                System.out.println(DROW_MESSADGE);
+                System.out.println(DROW_MESSAGE);
             }
         }
         printTable();
@@ -110,7 +110,7 @@ public class TicTacToe {
         if (table[2][0] == ch && table[1][1] == ch && table[0][2] == ch)
             return true;
         return false;
-    }
+      }
 
     boolean isTableFull() {
         for (int x = 0; x < 3; x++) {
